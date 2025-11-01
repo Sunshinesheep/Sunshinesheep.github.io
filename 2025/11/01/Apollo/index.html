@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    197
+                    194
                 </div>
                 
 
@@ -439,35 +439,40 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="配置问题"><a href="#配置问题" class="headerlink" title="配置问题"></a>配置问题</h2><p>如果是40系列显卡，Apollo8.0 及以前已经不再支持。Apollo9.0有针对40系显卡驱动的补丁，可以勉强使用。如果想使用8.0及以前版本，建议30系列及以前显卡。</p>
-<h2 id="Build-Apollo"><a href="#Build-Apollo" class="headerlink" title="Build Apollo"></a>Build Apollo</h2><h4 id="clone-apollo-9-0"><a href="#clone-apollo-9-0" class="headerlink" title="clone apollo 9.0"></a>clone apollo 9.0</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b v9.0.0 &lt;https://github.com/ApolloAuto/apollo.git&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Build-Apollo"><a href="#Build-Apollo" class="headerlink" title="Build Apollo"></a>Build Apollo</h2><h4 id="clone-apollo-9-0"><a href="#clone-apollo-9-0" class="headerlink" title="clone apollo 9.0"></a>clone apollo 9.0</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> v9.0.0 <span class="token operator">&lt;</span>https://github.com/ApolloAuto/apollo.git<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <h5 id="由于40系显卡的原因，需要特殊操作"><a href="#由于40系显卡的原因，需要特殊操作" class="headerlink" title="由于40系显卡的原因，需要特殊操作"></a>由于40系显卡的原因，需要特殊操作</h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://apollo.baidu.com/community/article/1212">40系列显卡新镜像支持_Apollo开发者社区</a></p>
 </blockquote>
-<h5 id="dev-start-sh成功会提示"><a href="#dev-start-sh成功会提示" class="headerlink" title="dev_start.sh成功会提示"></a>dev_start.sh成功会提示</h5><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ OK ] Congratulations! You have successfully finished setting up Apollo Dev Environment.</span><br><span class="line">[ OK ] To login into the newly created apollo_dev_lei container, please run the following <span class="built_in">command</span>:</span><br><span class="line">[ OK ]   bash docker/scripts/dev_into.sh</span><br><span class="line">[ OK ] Enjoy!</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="dev-start-sh成功会提示"><a href="#dev-start-sh成功会提示" class="headerlink" title="dev_start.sh成功会提示"></a>dev_start.sh成功会提示</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Congratulations<span class="token operator">!</span> You have successfully finished setting up Apollo Dev Environment.
+<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> To login into the newly created apollo_dev_lei container, please run the following command:
+<span class="token punctuation">[</span> OK <span class="token punctuation">]</span>   <span class="token function">bash</span> docker/scripts/dev_into.sh
+<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Enjoy<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h5 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h5><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash docker/scripts/dev_into.sh</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h5><pre class="line-numbers language-none"><code class="language-none">bash docker/scripts/dev_into.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h5 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h5><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apollo.sh build_gpu</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./apollo.sh build_gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h5 id="成功会提示"><a href="#成功会提示" class="headerlink" title="成功会提示"></a>成功会提示</h5><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==============================================</span><br><span class="line">[ OK ] Done building apollo. Enjoy!</span><br><span class="line">==============================================</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="成功会提示"><a href="#成功会提示" class="headerlink" title="成功会提示"></a>成功会提示</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Done building apollo. Enjoy<span class="token operator">!</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h5 id="Dreamview，启动"><a href="#Dreamview，启动" class="headerlink" title="Dreamview，启动"></a><strong>Dreamview，启动</strong></h5><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./scripts/bootstrap.sh</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="Dreamview，启动"><a href="#Dreamview，启动" class="headerlink" title="Dreamview，启动"></a><strong>Dreamview，启动</strong></h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./scripts/bootstrap.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <h5 id="根据提示进入Dreamview"><a href="#根据提示进入Dreamview" class="headerlink" title="根据提示进入Dreamview"></a>根据提示进入Dreamview</h5><p>Apollo9.0是</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8899/</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">http://localhost:8899/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -1183,7 +1188,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">636</span>
+                        class="white-color">633</span>
             
             
             
