@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    207
+                    209
                 </div>
                 
 
@@ -444,11 +444,15 @@
 
 
 
-<h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> insatll <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> insatll <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h4 id="安装魔法"><a href="#安装魔法" class="headerlink" title="安装魔法"></a>安装魔法</h4><p>此处省略</p>
+<h4 id="安装curl"><a href="#安装curl" class="headerlink" title="安装curl"></a>安装curl</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">curl</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="安装魔法"><a href="#安装魔法" class="headerlink" title="安装魔法"></a>安装魔法</h3><p>此处省略</p>
 <h3 id="Minicoda安装"><a href="#Minicoda安装" class="headerlink" title="Minicoda安装"></a>Minicoda安装</h3><p>USTC mirror提供miniconda安装包</p>
 <p>下载后：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> Miniconda3-latest-Linux-x86_64.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -474,11 +478,13 @@ show_channel_urls: true<span aria-hidden="true" class="line-numbers-rows"><span>
 <h4 id="NVIDIA-Container-Toolkit"><a href="#NVIDIA-Container-Toolkit" class="headerlink" title="NVIDIA Container Toolkit"></a>NVIDIA Container Toolkit</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> https://get.docker.com <span class="token operator">|</span> <span class="token function">sh</span> <span class="token punctuation">\</span>
 <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> systemctl <span class="token parameter variable">--now</span> <span class="token builtin class-name">enable</span> <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">distribution</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">.</span> /etc/os-release<span class="token punctuation">;</span><span class="token builtin class-name">echo</span> $ID$VERSION_ID<span class="token variable">)</span></span> <span class="token punctuation">\</span>
-    <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://nvidia.github.io/libnvidia-container/gpgkey <span class="token operator">|</span> <span class="token function">sudo</span> gpg <span class="token parameter variable">--dearmor</span> <span class="token parameter variable">-o</span> /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg <span class="token punctuation">\</span>
-    <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-L</span> https://nvidia.github.io/libnvidia-container/<span class="token variable">$distribution</span>/libnvidia-container.list <span class="token operator">|</span> <span class="token punctuation">\</span>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">distribution</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">.</span> /etc/os-release<span class="token punctuation">;</span><span class="token builtin class-name">echo</span> $ID$VERSION_ID<span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://nvidia.github.io/libnvidia-container/gpgkey <span class="token operator">|</span> <span class="token function">sudo</span> gpg <span class="token parameter variable">--dearmor</span> <span class="token parameter variable">-o</span> /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-L</span> https://nvidia.github.io/libnvidia-container/<span class="token variable">$distribution</span>/libnvidia-container.list <span class="token operator">|</span> <span class="token punctuation">\</span>
           <span class="token function">sed</span> <span class="token string">'s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g'</span> <span class="token operator">|</span> <span class="token punctuation">\</span>
-          <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/nvidia-container-toolkit.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/nvidia-container-toolkit.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> nvidia-docker2
@@ -1202,7 +1208,7 @@ show_channel_urls: true<span aria-hidden="true" class="line-numbers-rows"><span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">858</span>
+                        class="white-color">860</span>
             
             
             
