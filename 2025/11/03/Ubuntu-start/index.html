@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    209
+                    266
                 </div>
                 
 
@@ -469,8 +469,7 @@ show_channel_urls: true<span aria-hidden="true" class="line-numbers-rows"><span>
 
 <h3 id="Docker、Docker-compose以及NVIDIA-Container-Toolkit安装"><a href="#Docker、Docker-compose以及NVIDIA-Container-Toolkit安装" class="headerlink" title="Docker、Docker-compose以及NVIDIA Container Toolkit安装"></a>Docker、Docker-compose以及NVIDIA Container Toolkit安装</h3><h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
+<p>记得修改镜像源，文件位于/etc/docker/daemon.json</p>
 <h4 id="Docker-compose"><a href="#Docker-compose" class="headerlink" title="Docker-compose"></a>Docker-compose</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker-compose</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
@@ -489,6 +488,22 @@ show_channel_urls: true<span aria-hidden="true" class="line-numbers-rows"><span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> nvidia-docker2
 <span class="token function">sudo</span> systemctl restart <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>再修改daemon.json，增加以下内容：</p>
+<pre class="line-numbers language-none"><code class="language-none">"default-runtime": "nvidia",
+"runtimes": {
+  "nvidia": {
+    "path": "nvidia-container-runtime",
+    "runtimeArgs": []
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>重启docker后，验证：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">--gpus</span> all nvidia/cuda:12.9.1-base-ubuntu20.04 nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -1208,7 +1223,7 @@ show_channel_urls: true<span aria-hidden="true" class="line-numbers-rows"><span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">860</span>
+                        class="white-color">917</span>
             
             
             
