@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Apollo9.0 构建, 奇迹的起点">
-    <meta name="description" content="在Ubuntu上构建Apollo">
+    <meta name="keywords" content="建设自己的博客 —— Hexo部署使用, 奇迹的起点">
+    <meta name="description" content="我是如何建设这个博客的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Apollo9.0 构建 | 奇迹的起点</title>
+    <title>建设自己的博客 —— Hexo部署使用 | 奇迹的起点</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +336,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Apollo9.0 构建</h1>
+                    <h1 class="description center-align post-title">建设自己的博客 —— Hexo部署使用</h1>
                 </div>
             </div>
         </div>
@@ -365,12 +365,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Apollo/">
-                                <span class="chip bg-color">Apollo</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/AutoDriving/">
-                                <span class="chip bg-color">AutoDriving</span>
+                            <a href="/tags/Blog/">
+                                <span class="chip bg-color">Blog</span>
                             </a>
                         
                     </div>
@@ -394,7 +394,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-01
+                    2025-11-03
                 </div>
                 
 
@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    212
+                    307
                 </div>
                 
 
@@ -438,42 +438,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="配置问题"><a href="#配置问题" class="headerlink" title="配置问题"></a>配置问题</h2><p>如果是40系列显卡，Apollo8.0 及以前已经不再支持。Apollo9.0有针对40系显卡驱动的补丁，可以勉强使用。如果想使用8.0及以前版本，建议30系列及以前显卡。</p>
-<h2 id="确定已经安装Docker三件套"><a href="#确定已经安装Docker三件套" class="headerlink" title="确定已经安装Docker三件套"></a>确定已经安装Docker三件套</h2><p>Docker、Docker-compose以及NVIDIA Container Toolkit安装</p>
-<h2 id="Build-Apollo"><a href="#Build-Apollo" class="headerlink" title="Build Apollo"></a>Build Apollo</h2><h4 id="clone-apollo-9-0"><a href="#clone-apollo-9-0" class="headerlink" title="clone apollo 9.0"></a>clone apollo 9.0</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> v9.0.0 <span class="token operator">&lt;</span>https://github.com/ApolloAuto/apollo.git<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><p>Ubuntu22.04</p>
+<h2 id="前置安装"><a href="#前置安装" class="headerlink" title="前置安装"></a>前置安装</h2><h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><p><strong>不要</strong>直接使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样的不是最新版本</p>
+<h4 id="通过NodeSource-PPA安装"><a href="#通过NodeSource-PPA安装" class="headerlink" title="通过NodeSource PPA安装"></a>通过NodeSource PPA安装</h4><p>参考：<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions/blob/master/DEV_README.md">https://github.com/nodesource/distributions/blob/master/DEV_README.md</a></p>
+<h4 id="PS：从官网也可，不过麻烦一些"><a href="#PS：从官网也可，不过麻烦一些" class="headerlink" title="PS：从官网也可，不过麻烦一些"></a>PS：从官网也可，不过麻烦一些</h4><p>官方地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download">https://nodejs.org/en/download</a></p>
+<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli <span class="token parameter variable">-g</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装后使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo <span class="token parameter variable">-V</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可查看版本</p>
+<h3 id="问题一：npm-install-安装不了，提示权限不够"><a href="#问题一：npm-install-安装不了，提示权限不够" class="headerlink" title="问题一：npm install 安装不了，提示权限不够"></a>问题一：npm install 安装不了，提示权限不够</h3><p>参考：<a target="_blank" rel="noopener" href="https://sven-chr.github.io/myblog/2025/10/14/2025-10-14-npm-permission-solution-guide/">https://sven-chr.github.io/myblog/2025/10/14/2025-10-14-npm-permission-solution-guide/</a></p>
+<ol>
+<li><p>创建新的全局包目录</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/.npm-global<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>配置npm使用新目录</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token builtin class-name">set</span> prefix <span class="token string">'~/.npm-global'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>更新path</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'export PATH=~/.npm-global/bin:$PATH'</span> <span class="token operator">&gt;&gt;</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>重新加载</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h3 id="问题二：hexo-Command-Can‘t-Found"><a href="#问题二：hexo-Command-Can‘t-Found" class="headerlink" title="问题二：hexo Command Can‘t Found"></a>问题二：hexo Command Can‘t Found</h3><p>如果出现找不到该命令，那是因为Hexo的问题，需使用npx hexo。</p>
+<p>但为了省事，需要在~/.bashrc中设置</p>
+<pre class="line-numbers language-none"><code class="language-none">export PATH=~/.npm_global/bin:$PATH<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h5 id="由于40系显卡的原因，需要特殊操作"><a href="#由于40系显卡的原因，需要特殊操作" class="headerlink" title="由于40系显卡的原因，需要特殊操作"></a>由于40系显卡的原因，需要特殊操作</h5><blockquote>
-<p><a target="_blank" rel="noopener" href="https://apollo.baidu.com/community/article/1212">40系列显卡新镜像支持_Apollo开发者社区</a></p>
-</blockquote>
-<h5 id="dev-start-sh成功会提示"><a href="#dev-start-sh成功会提示" class="headerlink" title="dev_start.sh成功会提示"></a>dev_start.sh成功会提示</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Congratulations<span class="token operator">!</span> You have successfully finished setting up Apollo Dev Environment.
-<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> To login into the newly created apollo_dev_lei container, please run the following command:
-<span class="token punctuation">[</span> OK <span class="token punctuation">]</span>   <span class="token function">bash</span> docker/scripts/dev_into.sh
-<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Enjoy<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="初始化Hexo文件项目"><a href="#初始化Hexo文件项目" class="headerlink" title="初始化Hexo文件项目"></a>初始化Hexo文件项目</h2><ol>
+<li><p>可事先创建文件夹dir，也可不创建</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init <span class="token operator">&lt;</span>dir<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>安装所需npm套件</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><h3 id="新建一个github项目"><a href="#新建一个github项目" class="headerlink" title="新建一个github项目"></a>新建一个github项目</h3><p><img src="https://cdn.jsdelivr.net/gh/Sunshinesheep/blogpic@main/img/image-20251103205032507.png" alt="image-20251103205032507"></p>
+<p>注意命名，需要为username.github.io</p>
+<h3 id="上传Hexo项目"><a href="#上传Hexo项目" class="headerlink" title="上传Hexo项目"></a>上传Hexo项目</h3><h4 id="安装git相关组件"><a href="#安装git相关组件" class="headerlink" title="安装git相关组件"></a>安装git相关组件</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h5 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h5><pre class="line-numbers language-none"><code class="language-none">bash docker/scripts/dev_into.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="修改根目录-config-yml"><a href="#修改根目录-config-yml" class="headerlink" title="修改根目录_config.yml"></a>修改根目录_config.yml</h4><pre class="line-numbers language-none"><code class="language-none">deploy:
+  type: git
+  repo: https://github.com/username/username.github.io.git
+  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h5 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./apollo.sh build_gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h5 id="成功会提示"><a href="#成功会提示" class="headerlink" title="成功会提示"></a>成功会提示</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
-<span class="token punctuation">[</span> OK <span class="token punctuation">]</span> Done building apollo. Enjoy<span class="token operator">!</span>
-<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h5 id="Dreamview，启动"><a href="#Dreamview，启动" class="headerlink" title="Dreamview，启动"></a><strong>Dreamview，启动</strong></h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./scripts/bootstrap.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h5 id="根据提示进入Dreamview"><a href="#根据提示进入Dreamview" class="headerlink" title="根据提示进入Dreamview"></a>根据提示进入Dreamview</h5><p>Apollo9.0是</p>
-<pre class="line-numbers language-none"><code class="language-none">http://localhost:8899/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><pre class="line-numbers language-none"><code class="language-none">hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -501,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sunshinesheep.github.io/2025/11/01/Apollo/">https://sunshinesheep.github.io/2025/11/01/Apollo/</a>
+                    <a href="https://sunshinesheep.github.io/2025/11/03/build-blog/">https://sunshinesheep.github.io/2025/11/03/build-blog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,12 +557,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Apollo/">
-                                    <span class="chip bg-color">Apollo</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
-                                <a href="/tags/AutoDriving/">
-                                    <span class="chip bg-color">AutoDriving</span>
+                                <a href="/tags/Blog/">
+                                    <span class="chip bg-color">Blog</span>
                                 </a>
                             
                         </div>
@@ -897,9 +915,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/11/03/build-blog/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="建设自己的博客 —— Hexo部署使用">
+                        
+                        <span class="card-title">建设自己的博客 —— Hexo部署使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            我是如何建设这个博客的
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" class="post-category">
+                                    经验分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Blog/">
+                        <span class="chip bg-color">Blog</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2025/11/03/Ubuntu-start/">
                     <div class="card-image">
@@ -917,9 +990,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -941,55 +1014,6 @@
                     
                     <a href="/tags/%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/">
                         <span class="chip bg-color">装机必备</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2025/10/31/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            第一篇文章，随便聊聊吧
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-10-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%97%B2%E8%B0%88/" class="post-category">
-                                    闲谈
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%81%8A%E4%B8%80%E8%81%8A/">
-                        <span class="chip bg-color">聊一聊</span>
                     </a>
                     
                 </div>
