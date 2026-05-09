@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>VS_Code配置</title>
+      <link href="/2026/05/09/VS-Code-config/"/>
+      <url>/2026/05/09/VS-Code-config/</url>
+      
+        <content type="html"><![CDATA[<p>密码的，长时间没写blog，怎么操作都忘了<br>本篇用来测试</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 装机必备 </tag>
+            
+            <tag> IDE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker的常用命令</title>
       <link href="/2025/11/06/docker-start/"/>
       <url>/2025/11/06/docker-start/</url>
